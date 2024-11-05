@@ -1,16 +1,14 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 export default function Home() {
-
   const [nextShowDate, setNextShowDate] = useState<Date | null>(null);
 
   useEffect(() => {
     const getNextShowDate = () => {
-
-      const showDayUTC = 5 // Friday
-      const showHourUTC = 3 // 3am UTC
+      const showDayUTC = 5; // Friday
+      const showHourUTC = 3; // 3am UTC
 
       const now = new Date();
       const daysUntilNextShow = (showDayUTC - now.getUTCDay() + 7) % 7;
@@ -33,9 +31,7 @@ export default function Home() {
           <p>{nextShowDate?.toISOString()}</p>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-
-      </footer>
+      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center"></footer>
     </div>
   );
 }
